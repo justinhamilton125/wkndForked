@@ -42,4 +42,4 @@ function embedTweet(tweetLink) {
 }
 
 // Example usage (you can replace this with user input or another trigger)
-embedTweet('https://x.com/Keysight/status/1615097861619818499'); // Replace with user input link
+embedTweet('twitter-tweet'); // Replace with user input link
