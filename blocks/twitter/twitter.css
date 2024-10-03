@@ -1,41 +1,33 @@
-/* Container for the tweet */
-.tweet-container {
+/* Style for the Twitter block container */
+.twitter {
     max-width: 600px; /* Limit width for better readability */
     margin: 20px auto; /* Center the tweet on the page */
-    padding: 15px; /* Add some padding around the tweet */
+    padding: 15px; /* Add some padding */
     border: 1px solid #e1e8ed; /* Light border */
     border-radius: 8px; /* Rounded corners */
     background-color: #f5f8fa; /* Light background color */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Style for the tweet content */
-.tweet-container blockquote {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+/* Style for the inner divs (adjust as needed) */
+.twitter > div {
     color: #14171a; /* Text color */
+    padding: 10px; /* Padding for inner div */
 }
 
 /* Adjust link styles */
-.tweet-container a {
+.twitter a {
     color: #1da1f2; /* Twitter blue color for links */
     text-decoration: none; /* Remove underline */
 }
 
-.tweet-container a:hover {
-    text-decoration: underline; /* Underline on hover for accessibility */
-}
-
-/* Style the tweet footer (like timestamps) */
-.tweet-container .tweet-footer {
-    font-size: 0.9em; /* Slightly smaller text */
-    color: #657786; /* Gray color for footer text */
-    margin-top: 10px; /* Space above the footer */
+.twitter a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .tweet-container {
+    .twitter {
         padding: 10px; /* Adjust padding for smaller screens */
     }
 }

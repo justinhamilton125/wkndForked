@@ -1,4 +1,3 @@
-// twitterEmbed.js
 window.twttr = (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],
         t = window.twttr || {};
@@ -16,21 +15,23 @@ window.twttr = (function(d, s, id) {
     return t;
 }(document, "script", "twitter-wjs"));
 
+// Function to extract tweet ID from the full tweet URL
 function getTweetID(url) {
-    const tweetID = url.split('/').pop().split('?')[0];
-    return tweetID;
+    const tweetID = url.split('/').pop().split('?')[0]; // Get the last part before query parameters
+    return tweetID; // Return the tweet ID
 }
 
-document.getElementById('embedButton').addEventListener('click', function() {
-    const tweetLink = document.getElementById('tweetLinkInput').value;
+// Function to embed the tweet
+function embedTweet(tweetLink) {
     const tweetID = getTweetID(tweetLink);
+    const twitterBlock = document.querySelector('.twitter.block div div'); // Select the target div
 
     twttr.ready(function(twttr) {
         twttr.widgets.createTweet(
             tweetID,
-            document.getElementById('tweet1'),
+            twitterBlock, // Use the selected div
             {
-                theme: 'light',
+                theme: 'light', // or dark
                 conversation: 'none',
                 dnt: true,
             }
@@ -38,4 +39,7 @@ document.getElementById('embedButton').addEventListener('click', function() {
             console.log('Tweet added.');
         });
     });
-});
+}
+
+// Example usage (you can replace this with user input or another trigger)
+embedTweet('https://x.com/Keysight/status/1615097861619818499'); // Replace with user input link
