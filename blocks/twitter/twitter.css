@@ -17,8 +17,7 @@
 
 /* Adjust link styles */
 .twitter a {
-    color: #1da1f2; /* Twitter blue color for links */
-    text-decoration: none; /* Remove underline */
+    display: none;
 }
 
 .twitter a:hover {
