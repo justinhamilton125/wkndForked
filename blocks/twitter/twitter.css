@@ -20,6 +20,10 @@
     display: none;
 }
 
+.twitter-wrapper > .twitter.block > div > div:first-child {
+    display: none; /* Hides the div containing the URL */
+}
+
 .twitter a:hover {
     text-decoration: underline; /* Underline on hover */
 }
