@@ -25,6 +25,10 @@
     text-decoration: underline; /* Underline on hover */
 }
 
+.button-container{
+    display: none;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .twitter {
