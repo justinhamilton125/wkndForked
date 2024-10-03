@@ -25,6 +25,9 @@
     text-decoration: underline; /* Underline on hover */
 }
 
+.twitter.block .button-container{
+    display: none;
+}
 
 /* Responsive design */
 @media (max-width: 768px) {
