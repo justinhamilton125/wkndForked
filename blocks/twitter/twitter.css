@@ -26,10 +26,6 @@
 }
 
 
-.twitter-wrapper .twitter > div > div:nth-of-type(3) {
-    display: none; /* Hides the first div that contains the URL */
-}
-
 
 /* Responsive design */
 @media (max-width: 768px) {
