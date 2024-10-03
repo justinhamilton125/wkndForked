@@ -1,95 +1,41 @@
-main .carousel-container {
-    padding: 0;
-  }
-  
-  main .carousel {
-    display: flex;
-    scroll-snap-type: x mandatory;
-    overflow: scroll hidden;
-    scroll-behavior: smooth;
-    max-width: 1680px;
-    margin: auto;
-  }
-  
-  main .carousel picture {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    box-sizing: border-box;
-  }
-  
-  main .carousel img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    object-position: 90%;
-  }
-    
-  main .carousel > div {
-    width: 100%;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    position: relative;
-    min-height: 580px;
-    align-items: flex-end;
-    display: flex;
-  }
-  
-  main .carousel div.carousel-text {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: orange;
-    min-height: 188px;
-    padding: 0 28px;
-  }
-  
-  main .carousel div.carousel-text p {
-    margin: 10px 0 16px;
-    line-height: 1.2;
-  }
-  
-  main .carousel div.carousel-text h2 {
-    margin: 0;
-    margin-top: 16px; 
-  }
-  
-  main .carousel div.carousel-text .button {
-    margin: 0;
-  }
-    
-  
-  main .carousel::-webkit-scrollbar {
-      display: none;
+/* Container for the tweet */
+.tweet-container {
+    max-width: 600px; /* Limit width for better readability */
+    margin: 20px auto; /* Center the tweet on the page */
+    padding: 15px; /* Add some padding around the tweet */
+    border: 1px solid #e1e8ed; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f5f8fa; /* Light background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style for the tweet content */
+.tweet-container blockquote {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    color: #14171a; /* Text color */
+}
+
+/* Adjust link styles */
+.tweet-container a {
+    color: #1da1f2; /* Twitter blue color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.tweet-container a:hover {
+    text-decoration: underline; /* Underline on hover for accessibility */
+}
+
+/* Style the tweet footer (like timestamps) */
+.tweet-container .tweet-footer {
+    font-size: 0.9em; /* Slightly smaller text */
+    color: #657786; /* Gray color for footer text */
+    margin-top: 10px; /* Space above the footer */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tweet-container {
+        padding: 10px; /* Adjust padding for smaller screens */
     }
-  
-  main .carousel-wrapper {
-    max-width: unset;
-  }
-  
-  main .carousel-wrapper .carousel-buttons {
-    text-align: center;
-    margin-top: 0;
-    position: absolute;
-    display: flex;
-    right: 0;
-    left: 0;
-    justify-content: center;
-  }
-  
-  main .carousel-buttons button {
-    display: block;
-    height: 10px;
-    width: 10px;
-    padding: 0;
-    margin: 5px;
-    border-radius: 5px;
-    background-color: var(--highlight-background-color);
-  }
-  
-  main .carousel-buttons button.selected {
-    background-color: var(--link-color);
-  }
-  
+}

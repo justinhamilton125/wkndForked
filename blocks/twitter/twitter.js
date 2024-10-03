@@ -1,22 +1,41 @@
-export default function decorate(block) {
-    const buttons = document.createElement('div');
-    buttons.className = 'carousel-buttons';
-    [...block.children].forEach((row, i) => {
-      const classes = ['image', 'text'];
-      classes.forEach((e, j) => {
-        row.children[j].classList.add(`carousel-${e}`);
-      });
-      /* buttons */
-      const button = document.createElement('button');
-      button.title = 'Carousel Nav';
-      if (!i) button.classList.add('selected');
-      button.addEventListener('click', () => {
-        block.scrollTo({ top: 0, left: row.offsetLeft - row.parentNode.offsetLeft, behavior: 'smooth' });
-        [...buttons.children].forEach((r) => r.classList.remove('selected'));
-        button.classList.add('selected');
-      });
-      buttons.append(button);
+// twitterEmbed.js
+window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));
+
+function getTweetID(url) {
+    const tweetID = url.split('/').pop().split('?')[0];
+    return tweetID;
+}
+
+document.getElementById('embedButton').addEventListener('click', function() {
+    const tweetLink = document.getElementById('tweetLinkInput').value;
+    const tweetID = getTweetID(tweetLink);
+
+    twttr.ready(function(twttr) {
+        twttr.widgets.createTweet(
+            tweetID,
+            document.getElementById('tweet1'),
+            {
+                theme: 'light',
+                conversation: 'none',
+                dnt: true,
+            }
+        ).then(function(el) {
+            console.log('Tweet added.');
+        });
     });
-    block.parentElement.append(buttons);
-  }
-  
+});
