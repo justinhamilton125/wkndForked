@@ -26,9 +26,6 @@
 }
 
 
-.twitter.block > div > div:not(.twitter-tweet) {
-    display: none; /* Hides the div containing the URL */
-}
 
 /* Responsive design */
 @media (max-width: 768px) {
