@@ -37,7 +37,7 @@ export default function decorate(block) {
                 tweetID,
                 targetBlock,
                 {
-                    theme: 'light', // or dark
+                    theme: 'dark', // or dark
                     conversation: 'none',
                     dnt: true,
                 }
