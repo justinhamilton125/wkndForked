@@ -48,7 +48,7 @@ function embedTweet(tweetLink, targetBlock) {
 
 // Function to extract tweet URL and embed it
 function extractAndEmbedTweet(block) {
-    const tweetLinkElement = block.querySelector('a'); // Assuming the link is within an <a> tag in the block
+    const tweetLinkElement = block.querySelector('a'); // Look for the <a> tag in the block
     if (tweetLinkElement) {
         const tweetLink = tweetLinkElement.href; // Extract the tweet link
         embedTweet(tweetLink, block); // Pass the tweet link and block to embedTweet
