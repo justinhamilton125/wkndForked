@@ -28,7 +28,6 @@ function embedTweet(tweetLink) {
         return;
     }
     const tweetID = getTweetID(tweetLink);
-    const twitterBlock = document.querySelector('.twitter.block div div'); // Select the target div
 
     twttr.ready(function(twttr) {
         twttr.widgets.createTweet(
