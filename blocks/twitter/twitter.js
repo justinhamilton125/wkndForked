@@ -22,17 +22,18 @@ function getTweetID(url) {
 }
 
 // Function to embed the tweet
-function embedTweet(tweetLink, targetBlock) {
+function embedTweet(tweetLink) {
     if (!tweetLink) {
         console.error("No tweet link provided.");
         return;
     }
     const tweetID = getTweetID(tweetLink);
-    
+    const twitterBlock = document.querySelector('.twitter.block div div'); // Select the target div
+
     twttr.ready(function(twttr) {
         twttr.widgets.createTweet(
             tweetID,
-            targetBlock, // Use the provided target block
+            twitterBlock, // Use the selected div
             {
                 theme: 'light', // or dark
                 conversation: 'none',
@@ -47,21 +48,16 @@ function embedTweet(tweetLink, targetBlock) {
 }
 
 // Function to extract tweet URL and embed it
-function extractAndEmbedTweet(block) {
-    const tweetLinkElement = block.querySelector('a'); // Look for the <a> tag in the block
-    if (tweetLinkElement) {
-        const tweetLink = tweetLinkElement.href; // Extract the tweet link
-        embedTweet(tweetLink, block); // Pass the tweet link and block to embedTweet
+function extractAndEmbedTweet() {
+    const tweetDiv = document.querySelector('.twitter-wrapper .twitter.block div div');
+    if (tweetDiv) {
+        const tweetLink = tweetDiv.innerText.trim(); // Extract and clean the URL text
+        embedTweet(tweetLink);
     } else {
-        console.error("Tweet URL not found in the block.");
+        console.error("Tweet URL not found in the document.");
     }
 }
 
-// Main function to decorate the block
-export default function decorate(block) {
-    // Clear any existing content in the block
-    block.textContent = '';
-
-    // Extract and embed the tweet
-    extractAndEmbedTweet(block);
-}
+// Automatically call this function to extract the tweet link and embed it
+// Call this function after the content has been inserted into the document
+extractAndEmbedTweet();
