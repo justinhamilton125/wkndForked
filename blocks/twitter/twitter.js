@@ -1,4 +1,3 @@
-// Twitter Embed Initialization
 window.twttr = (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],
         t = window.twttr || {};
@@ -23,22 +22,18 @@ function getTweetID(url) {
 }
 
 // Function to embed the tweet
-function embedTweet(tweetLink, block) {
+function embedTweet(tweetLink) {
     if (!tweetLink) {
         console.error("No tweet link provided.");
         return;
     }
     const tweetID = getTweetID(tweetLink);
+    const twitterBlock = document.querySelector('.twitter.block div div'); // Select the target div
 
     twttr.ready(function(twttr) {
-        // Use the embed function from the main code
-        const embedHTML = embedTwitter(new URL(tweetLink));
-        block.innerHTML = embedHTML; // Set the embed HTML directly to the block
-        
-        // Now create the tweet widget in the same block
         twttr.widgets.createTweet(
             tweetID,
-            block.querySelector('.twitter-tweet'),
+            twitterBlock, // Use the selected div
             {
                 theme: 'light', // or dark
                 conversation: 'none',
@@ -52,36 +47,17 @@ function embedTweet(tweetLink, block) {
     });
 }
 
-// Main function to extract tweet URL and embed it
-function extractAndEmbedTweet(block) {
-    const tweetLink = block.querySelector('a').href; // Assuming the link is within an anchor tag
-    embedTweet(tweetLink, block);
-}
-
-// Call this function in the main embedding logic
-export default function decorate(block) {
-    const placeholder = block.querySelector('picture');
-    const link = block.querySelector('a').href;
-    block.textContent = '';
-
-    if (placeholder) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'embed-placeholder';
-        wrapper.innerHTML = '<div class="embed-placeholder-play"><button title="Play"></button></div>';
-        wrapper.prepend(placeholder);
-        wrapper.addEventListener('click', () => {
-            loadEmbed(block, link, true);
-            extractAndEmbedTweet(block); // Call to embed tweet after loading
-        });
-        block.append(wrapper);
+// Function to extract tweet URL and embed it
+function extractAndEmbedTweet() {
+    const tweetDiv = document.querySelector('.twitter-wrapper .twitter.block div div');
+    if (tweetDiv) {
+        const tweetLink = tweetDiv.innerText.trim(); // Extract and clean the URL text
+        embedTweet(tweetLink);
     } else {
-        const observer = new IntersectionObserver((entries) => {
-            if (entries.some((e) => e.isIntersecting)) {
-                observer.disconnect();
-                loadEmbed(block, link);
-                extractAndEmbedTweet(block); // Call to embed tweet after loading
-            }
-        });
-        observer.observe(block);
+        console.error("Tweet URL not found in the document.");
     }
 }
+
+// Automatically call this function to extract the tweet link and embed it
+// Call this function after the content has been inserted into the document
+extractAndEmbedTweet();
