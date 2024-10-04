@@ -1,4 +1,5 @@
-export default function decorate() {
+export default function decorate(block) {
+    // Load Twitter's widgets script
     window.twttr = (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0],
             t = window.twttr || {};
@@ -23,18 +24,18 @@ export default function decorate() {
     }
 
     // Function to embed the tweet
-    function embedTweet(tweetLink) {
+    function embedTweet(tweetLink, targetBlock) {
         if (!tweetLink) {
             console.error("No tweet link provided.");
             return;
         }
         const tweetID = getTweetID(tweetLink);
-        const twitterBlock = document.querySelector('.twitter.block div div'); // Select the target div
-
+        
+        // Use the provided target block to embed the tweet
         twttr.ready(function(twttr) {
             twttr.widgets.createTweet(
                 tweetID,
-                twitterBlock, // Use the selected div
+                targetBlock,
                 {
                     theme: 'light', // or dark
                     conversation: 'none',
@@ -50,17 +51,15 @@ export default function decorate() {
 
     // Function to extract tweet URL and embed it
     function extractAndEmbedTweet() {
-        const tweetDiv = document.querySelector('.twitter-wrapper .twitter.block div div');
-        if (tweetDiv) {
-            const tweetLink = tweetDiv.innerText.trim(); // Extract and clean the URL text
-            embedTweet(tweetLink);
+        const tweetLinkElement = block.querySelector('a'); // Look for an <a> tag in the block
+        if (tweetLinkElement) {
+            const tweetLink = tweetLinkElement.href; // Extract the tweet link
+            embedTweet(tweetLink, block); // Pass the tweet link and the block to embedTweet
         } else {
-            console.error("Tweet URL not found in the document.");
+            console.error("Tweet URL not found in the block.");
         }
     }
 
-    // Automatically call this function to extract the tweet link and embed it
-    // Call this function after the content has been inserted into the document
+    // Call the function to extract the tweet link and embed it
     extractAndEmbedTweet();
-
 }
