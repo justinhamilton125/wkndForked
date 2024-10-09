@@ -1,19 +1,61 @@
 .cards > ul {
+    color: var(--textColor,#202020);
+    font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: normal;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 16px;
+    width: 100%;
+    
 }
 
 .cards > ul > li {
-    border: 1px solid var(--highlight-background-color);
-    background-color: var(--background-color)
+    color: var(--textColor,#202020);
+    font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
+    font-size: 18px;
+    line-height: 1.5;
+    list-style: none;
+    flex-basis: 260px;
+    margin: 0 0 2rem;
+    padding-right: 14px;
+}
+
+.cards strong{
+    line-height: 1.5;
+    list-style: none;
+    color: var(--textColor,#202020);
+    font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
+    font-size: var(--fontSizeMedium,18px);
+    font-weight: var(--fontWeightBold,600);
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.cards p{
+    font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
+    line-height: 1.5;
+    list-style: none;
+    color: dimgray;
+    display: block;
+    font-size: var(--fontSizeSmall,14px);
+    margin-top: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 260px;
+    text-align: left;
 }
 
 .cards .cards-card-body {
-    margin: 16px;
+    margin: 0px;
 }
 
 .cards .cards-card-image {
@@ -73,3 +115,4 @@
         width: calc(100%/4);
     }
 }
+

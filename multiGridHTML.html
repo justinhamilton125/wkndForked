@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs with Cards Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            margin-right: 10px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .tabs button:hover {
+            background-color: #ddd;
+        }
+
+        .tabs button.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tabs with Cards Example</h1>
+    <div class="tabs">
+        <button class="active" onclick="showTab('Tab1')">Tab 1</button>
+        <button onclick="showTab('Tab2')">Tab 2</button>
+        <button onclick="showTab('Tab3')">Tab 3</button>
+    </div>
+    
+    <div class="cards" id="cardContainer">
+        <!-- Cards will be injected here -->
+    </div>
+
+    <script>
+        const cardData = {
+            Tab1: [
+                { id: 1, title: 'Card 1A', content: 'Content for Card 1A' },
+                { id: 2, title: 'Card 1B', content: 'Content for Card 1B' },
+            ],
+            Tab2: [
+                { id: 3, title: 'Card 2A', content: 'Content for Card 2A' },
+                { id: 4, title: 'Card 2B', content: 'Content for Card 2B' },
+            ],
+            Tab3: [
+                { id: 5, title: 'Card 3A', content: 'Content for Card 3A' },
+                { id: 6, title: 'Card 3B', content: 'Content for Card 3B' },
+            ],
+        };
+
+        function showTab(tab) {
+            const buttons = document.querySelectorAll('.tabs button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+                if (button.textContent === tab) {
+                    button.classList.add('active');
+                }
+            });
+
+            const cardContainer = document.getElementById('cardContainer');
+            cardContainer.innerHTML = '';
+
+            cardData[tab].forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card';
+                cardElement.innerHTML = `<h3>${card.title}</h3><p>${card.content}</p>`;
+                cardContainer.appendChild(cardElement);
+            });
+        }
+
+        // Initialize with the first tab
+        showTab('Tab1');
+    </script>
+</body>
+</html>

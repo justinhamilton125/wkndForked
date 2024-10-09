@@ -12,17 +12,17 @@
 
  :root {
   /* colors */
-  --color-yellow: #ffea00;
-  --link-color: black;
-  --link-hover-color: black;
-  --background-color: #fff;
-  --overlay-background-color: #eee;
-  --highlight-background-color: #ccc;
-  --text-color: #202020;
-  --text-color-light: #ebebeb;
-  --heading-highlight-color: #ffea00;
-  --overlay-text-color: var(--text-color);
-  --highlight-text-color: var(--text-color);
+    --color-yellow: #ffea00;  
+    --link-color: black;  
+    --link-hover-color: black;  
+    --background-color: #fff;  
+    --overlay-background-color: #eee;  
+    --highlight-background-color: #ccc;  
+    --text-color: #202020;  
+    --text-color-light: #ebebeb;  
+    --heading-highlight-color: #ffea00;  
+    --overlay-text-color: var(--text-color);  
+    --highlight-text-color: var(--text-color);
 
   /* fonts */
   --body-font-family: 'Source Sans Pro', 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -91,12 +91,19 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
+
+
 h1 {
-  font-weight: 400;
-  margin-top: 27px;
+  text-align: left;
+  color: var(--textColor,#202020);
+  line-height: 1.5;
+  font-family: var(--fontFamilySerif,"Asar",Georgia,"Times New Roman",Times,serif);
+  font-weight: var(--fontWeightNormal,normal);
   margin-bottom: 13.5px;
-  font-size: var(--heading-font-size-xxl);
+  margin-top: 27px;
+  font-size: var(--fontSizeH1,40px);
 }
+
 
 body.activity h1::after {
   display: block;
@@ -120,15 +127,28 @@ h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
 
+
+.default-content-wrapper h2::after {
+  border-bottom: 2px solid var(--brandPrimary,#ffea00);
+  content: "";
+  display: block;
+  padding-top: 8px;
+  width: 84px;
+}
+
 p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
 body p {
+  color: var(--textColor,#202020);
+  font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
   margin: 0 0 13.5px;
+  text-align: justify;
   font-size: 18px;
-  line-height: 2.5;
+  line-height: 1.75;
+  margin-bottom: 0;
 }
 
 a:any-link {
@@ -223,7 +243,7 @@ main input:hover {
 }
 
 main .section {
-  padding: 64px 16px;
+  padding: 0px;
 }
 
 main pre {
@@ -258,7 +278,7 @@ img {
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 0px;
   }
 }
 
@@ -339,3 +359,5 @@ main .section[data-section-status='initialized'] {
 .cc-btn.cc-save {
   padding: 13px 29px;
 }
+
+

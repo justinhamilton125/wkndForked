@@ -1,3 +1,18 @@
+.teaser {
+    color: var(--textColor,#202020);
+    font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0 14px;
+    padding-left: 0!important;
+    padding-right: 0!important;
+    clear: none;
+    float: left;
+    width: 100%;
+}
+
 .teaser > div {
     display: grid;
     grid-template-areas: "teaser";
@@ -18,13 +33,18 @@
 
 /* teaser content */
 .teaser > div > div:last-child {
-    background-color: #fff;
-    min-height: 180px;
-    width: 75%;
-    padding: 0 28px;
+    color: var(--textColor,#202020);
+    font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
     font-size: 18px;
-    margin: 0;
-    line-height: 1.75;
+    line-height: 1.5;
+    text-align: left;
+    float: left;
+    -webkit-box-flex: 1;
+    flex: 1;
+    padding-left: 14px;
+    padding-right: 14px;
+    background-color: white;
+    width: 90%;
 }
 
 .teaser picture {
@@ -33,19 +53,33 @@
 }
 
 .teaser img {
-    margin-top: 0;
-    margin-bottom: 0;
-    object-fit: cover;
-    object-position: top;
-    width: 100%;
+    color: var(--textColor,#202020);
+    font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    aspect-ratio: auto 1600 / 900;
     height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
 }
 
 .teaser h2 {
-    font-family: var(--body-font-family);
+    text-align: left;
+    color: var(--textColor,#202020);
+    line-height: 1.5;
+    font-weight: var(--fontWeightNormal,normal);
+    font-size: var(--fontSizeH2,36px);
+    font-family: var(--fontFamilySerif,"Asar",Georgia,"Times New Roman",Times,serif);
     margin: .5em 0;
+    margin-bottom: 0;
 }
 
 .teaser h2 a {
     color: #202020
 }
+
+
