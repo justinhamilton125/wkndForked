@@ -28,3 +28,18 @@
     background-color: #202020;
     color: #fff;
 }
+
+section.tabs-container{
+    color: var(--textColor,#202020);
+    font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0 14px;
+    clear: none!important;
+    display: flex;
+    float: left;
+    width: 75%;
+    margin-left: 0;
+}
