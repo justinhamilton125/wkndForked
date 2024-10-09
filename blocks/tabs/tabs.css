@@ -51,7 +51,7 @@ body > main > div.section.tabs-container > div:nth-child(2) > div > p:nth-child(
 
 
 body > main > div.section.tabs-container > div:nth-child(3) > div{
-    display: flex;
+    display: inline-block;
     width: 70%;
 }
 
