@@ -43,3 +43,15 @@ section.tabs-container{
     width: 75%;
     margin-left: 0;
 }
+
+body > main > div.section.tabs-container > div:nth-child(2) > div > p:nth-child(2) > picture > img{
+    display: flex;
+    width:70%;
+}
+
+
+body > main > div.section.tabs-container > div:nth-child(3) > div{
+    display: flex;
+    width: 70%;
+}
+
