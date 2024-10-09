@@ -1,6 +1,20 @@
 .activity-details-container {
-    grid-area: left;
+    color: var(--textColor,#202020);
+    font-family: var(--fontFamilySansSerif,"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif);
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0 14px;
+    padding-left: 0;
+    padding-right: 0;
+    clear: none!important;
+    display: flex;
+    float: left;
+    width: 25%;
+    margin-left: 0;
 }
+
 
 .activity-details dl {
     font-family: var(--body-font-family);
