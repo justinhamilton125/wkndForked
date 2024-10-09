@@ -121,6 +121,8 @@ body.article h2::after {
   border-bottom: 2px solid var(--heading-highlight-color);
 }
 
+
+
 h2 { font-size: var(--heading-font-size-xl) }
 h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) }
@@ -135,6 +137,7 @@ h6 { font-size: var(--heading-font-size-xs) }
   padding-top: 8px;
   width: 84px;
 }
+
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
