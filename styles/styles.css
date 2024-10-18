@@ -312,7 +312,7 @@ main .section.overlay {
 }
 
 main .section.full-bleed {
-  padding: 0;
+  padding: 0px;
 }
 
 main .section.full-bleed > div {
