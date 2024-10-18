@@ -16,6 +16,12 @@
 }
 
 
+body > main > div.section.activity-details-container > div{
+    margin: 0px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
 .activity-details dl {
     font-family: var(--body-font-family);
     text-transform: uppercase;

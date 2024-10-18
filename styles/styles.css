@@ -123,7 +123,8 @@ body.article h2::after {
 
 
 
-h2 { font-size: var(--heading-font-size-xl) }
+h2 { font-size: var(--heading-font-size-xl);
+padding-left: 14px; }
 h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }

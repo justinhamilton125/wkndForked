@@ -1,4 +1,3 @@
-
 nav.breadcrumb {
     grid-area: bread;
     display: inline-block;
@@ -10,12 +9,15 @@ nav.breadcrumb {
 .breadcrumb ul {
     padding-top: 0;
     margin-top: 0;
+    margin-bottom:0;
+    padding-left: 14px;
 }
 
 .breadcrumb li {
     display: inline-block;
     padding: 10px 5px;
     text-transform: uppercase;
+    font-size: 14px;
 }
 
 .breadcrumb li a {
