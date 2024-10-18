@@ -1,14 +1,14 @@
 export default function decorate(block) {
   const buttons = document.createElement('div');
-  buttons.className = 'carousel-buttons';
+  buttons.className = 'small-carousel-buttons';
   [...block.children].forEach((row, i) => {
     const classes = ['image', 'text'];
     classes.forEach((e, j) => {
-      row.children[j].classList.add(`carousel-${e}`);
+      row.children[j].classList.add(`small-carousel-${e}`);
     });
     /* buttons */
     const button = document.createElement('button');
-    button.title = 'Carousel Nav';
+    button.title = 'small-carousel Nav';
     if (!i) button.classList.add('selected');
     button.addEventListener('click', () => {
       block.scrollTo({ top: 0, left: row.offsetLeft - row.parentNode.offsetLeft, behavior: 'smooth' });
