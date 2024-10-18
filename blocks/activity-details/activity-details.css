@@ -46,3 +46,39 @@ body > main > div.section.activity-details-container > div{
     margin-bottom: 1.25em;
 }
 
+@media (max-width: 1020px){
+    .activity-details-container {
+        max-height: 105px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+
+    }
+
+    .activity-details dl {
+        max-width: 735px;
+        max-height: 105px;
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        flex-direction: column
+    }
+
+    .activity-details dt {
+        border-left: 5px solid #ebebeb;
+        color: #696969;
+        padding-left: 10px;
+        padding-right: 10px;
+
+
+    }
+    
+    .activity-details dd {
+        border-left: 5px solid #ebebeb;
+        margin-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+
+}

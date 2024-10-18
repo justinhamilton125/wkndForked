@@ -55,3 +55,8 @@ body > main > div.section.tabs-container > div:nth-child(3) > div{
     width: 70%;
 }
 
+
+@media (max-width: 1020px){
+
+
+}
