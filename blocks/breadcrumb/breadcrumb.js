@@ -12,7 +12,7 @@ export default function decorate($block) {
     text: 'Adventures',
     link: '/adventures',
   }, {
-    text: title,
+    text: title
   }];
   while (trail.length) {
     const step = trail.shift();
